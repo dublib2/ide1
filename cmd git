@@ -1,0 +1,70 @@
+kdubs@kdubs-7520:~/ide1$ git push
+fatal: unsafe repository ('/home/kdubs/ide1' is owned by someone else)
+To add an exception for this directory, call:
+
+        git config --global --add safe.directory /home/kdubs/ide1
+kdubs@kdubs-7520:~/ide1$ cd ..
+kdubs@kdubs-7520:~$ ls
+2022-05-19-145525_1680x1050_scrot.png  2022-05-19-165630_1680x1050_scrot.png  GNS3     Musique          vmware
+2022-05-19-164713_1680x1050_scrot.png  Bureau                                 ide1     Public
+2022-05-19-165010_1680x1050_scrot.png  cdgit                                  Images   snap
+2022-05-19-165051_1680x1050_scrot.png  cours_devops-estia                     Modèles  Téléchargements
+2022-05-19-165537_1680x1050_scrot.png  Documents                              modelio  Vidéos
+kdubs@kdubs-7520:~$ sudo chown kdubs /ide1
+[sudo] Mot de passe de kdubs : 
+Désolé, essayez de nouveau.
+[sudo] Mot de passe de kdubs : 
+chown: impossible d'accéder à '/ide1': Aucun fichier ou dossier de ce type
+kdubs@kdubs-7520:~$ sudo chown kdubs /home/kdubs/ide1/
+kdubs@kdubs-7520:~$ sudo chown kdubs:kdubs /home/kdubs/ide1/
+kdubs@kdubs-7520:~$ cd ide1/
+kdubs@kdubs-7520:~/ide1$ git push
+Everything up-to-date
+kdubs@kdubs-7520:~/ide1$ git push
+Everything up-to-date
+kdubs@kdubs-7520:~/ide1$ git push
+Everything up-to-date
+kdubs@kdubs-7520:~/ide1$ git add test2.html 
+kdubs@kdubs-7520:~/ide1$ git commit -m "ajout fichier"
+
+*** Veuillez me dire qui vous êtes.
+
+Lancez
+
+  git config --global user.email "Vous@exemple.com"
+  git config --global user.name "Votre Nom"
+
+pour régler l'identité par défaut de votre compte.
+Éliminez --global pour ne faire les réglages que dans ce dépôt.
+
+fatal: impossible de détecter automatiquement l'adresse ('kdubs@kdubs-7520.(none)' trouvé)
+kdubs@kdubs-7520:~/ide1$ 
+kdubs@kdubs-7520:~/ide1$ git config --global user.email
+kdubs@kdubs-7520:~/ide1$ git config --global user.email christophe@dubois.org
+kdubs@kdubs-7520:~/ide1$ ^C
+kdubs@kdubs-7520:~/ide1$ git config --global user.name "kdubs"
+kdubs@kdubs-7520:~/ide1$ git commit -m "ajout fichier"
+[main 3598734] ajout fichier
+ 1 file changed, 11 insertions(+)
+ create mode 100644 test2.html
+kdubs@kdubs-7520:~/ide1$ git log
+commit 35987341c44bc4ed3c3573e7084e82586b673be4 (HEAD -> main)
+Author: kdubs <christophe@dubois.org>
+Date:   Fri May 20 11:53:15 2022 +0200
+
+    ajout fichier
+
+commit 7c8e089f4e7fe87b326aa0919bbda2e0026eda5d (origin/main, origin/HEAD)
+Author: dublib2 <105912496+dublib2@users.noreply.github.com>
+Date:   Fri May 20 10:15:27 2022 +0200
+
+    Initial commit
+kdubs@kdubs-7520:~/ide1$ git push
+Décompte des objets: 3, fait.
+Delta compression using up to 8 threads.
+Compression des objets: 100% (3/3), fait.
+Écriture des objets: 100% (3/3), 431 bytes | 431.00 KiB/s, fait.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/dublib2/ide1.git
+   7c8e089..3598734  main -> main
+kdubs@kdubs-7520:~/ide1$ ^C
